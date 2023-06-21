@@ -33,7 +33,7 @@ $datos = $customerObj->createCartItem($cartId,$itemsid,$custId);
 				<th>Item Quantity</th>
 				<th>Item Price</th>
 				<th>Num Items</th>
-				<th>Sub Total</th>
+				<th>Sub Total Item</th>
 				<th>Address Line 1</th>
 				<th>Address City</th>
 				<th>Address State</th>
@@ -54,10 +54,12 @@ $datos = $customerObj->createCartItem($cartId,$itemsid,$custId);
 					<td><?php echo $dato->AddsState ?></td>
 
 				</tr>
+				<?php $total = $dato->SubTotal+=$dato->SubTotal ?>
 			<?php } /*Cerrar llave, fin de foreach*/ ?>
+			<h2>TOTAL for cart id <?php echo $dato->Cart ?>: <?php echo $total ?></h2>
 
+			<a href="practice3.php">All Customers</a>
 		</tbody>				
-		<a href="practice3.php">All Customers</a>
 	</table>
 </body>
 </html>
