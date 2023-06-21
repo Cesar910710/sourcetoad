@@ -31,7 +31,10 @@ $datos = $customerObj->getCustomerCarts($custoid);
 				<th>Item Quantity</th>
 				<th>Item Price</th>
 				<th>Num Items</th>
-				<th>Sub Total</th>
+				<th>Sub Total Item</th>
+				<th>Address Line 1</th>
+				<th>Address City</th>
+				<th>Address State</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -44,11 +47,17 @@ $datos = $customerObj->getCustomerCarts($custoid);
 					<td><?php echo $dato->ItemPrice ?></td>
 					<td><?php echo $dato->NumItems ?></td>
 					<td><?php echo $dato->SubTotal ?></td>
+					<td><?php echo $dato->AddsLine ?></td>
+					<td><?php echo $dato->City ?></td>
+					<td><?php echo $dato->AddsState ?></td>
 
 				</tr>
+				<?php $total = $dato->SubTotal+=$dato->SubTotal ?>
 			<?php } /*Cerrar llave, fin de foreach*/ ?>
+			<h2>TOTAL for cart id <?php echo $dato->Cart ?>: <?php echo $total ?></h2>
 
-		</tbody>
+			<a href="practice3.php">All Customers</a>
+		</tbody>				
 	</table>
 </body>
 </html>
